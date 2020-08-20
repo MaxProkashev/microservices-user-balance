@@ -16,8 +16,8 @@ var (
 func main() {
 	// предварительная настройка порт, бд
 	flag.Parse()
-	dropTable("all_users")
-	dropTable("transactions")
+	//dropTable("all_users")
+	//dropTable("transactions")
 	createTable("all_users")
 	createTable("transactions")
 
