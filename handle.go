@@ -33,6 +33,7 @@ type respSort struct {
 	Line []singLine `json:"line"`
 }
 
+// Внесение или снятие со счета
 func userHandle(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 
@@ -70,6 +71,7 @@ func userHandle(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(user)
 }
 
+// Транзакция между пользователями
 func userTransfer(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 
@@ -108,6 +110,7 @@ func userTransfer(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(userTo)
 }
 
+// получение баланса в конкретной валюте
 func userBalance(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 
@@ -137,6 +140,7 @@ func userBalance(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
+// получение баланса в рублях
 func userBalanceRUB(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	user := User{
@@ -148,6 +152,7 @@ func userBalanceRUB(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(user)
 }
 
+// получение сортированого списка операция пользователя
 func userTransactions(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	user := User{
